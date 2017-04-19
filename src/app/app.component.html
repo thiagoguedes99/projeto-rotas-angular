@@ -1,3 +1,28 @@
-<h1>
-  {{title}}
-</h1>
+<!--ul>
+    <li><a routerLink="" router-linkActive="active">home</a></li>
+    <li><a routerLink="cursos" router-linkActive="active">cursos</a></li>
+    <li><a routerLink="login" router-linkActive="active">login</a></li>
+    <li><a [routerLink]="['curso', valor.value]">detalhe</a></li>
+</ul>
+<input type="text" #valor>
+<router-outlet></router-outlet-->
+
+<nav *ngIf="mostraMenu">
+    <div class="nav-wrapper">
+        <a routerLink="" class="brand-logo">Home</a>
+
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li routerLinkActive="active"><a routerLink="login">Login</a></li>
+            <li routerLinkActive="active"><a routerLink="cursos" [queryParams]="{pagina: 1}">Cursos</a></li>
+            <li routerLinkActive="active"><a [routerLink]="['cursos', valor.value]">detalhe</a></li>
+            <li routerLinkActive="active"><a routerLink="alunos">Alunos</a></li>
+        </ul>
+    </div>
+</nav>
+
+<input type="text" #valor>
+
+
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

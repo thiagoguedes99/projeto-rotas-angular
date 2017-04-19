@@ -1,0 +1,7 @@
+<div class="collection">
+    <a class="collection-item" *ngFor="let item of cursos" [routerLink]="['/cursos', item.id]">{{item.nome}}</a>
+</div>
+
+<p>{{pagina}}</p>
+
+<button (click)="proximo()"></button>
